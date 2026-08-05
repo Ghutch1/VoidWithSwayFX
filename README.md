@@ -8,6 +8,18 @@ sudo xbps-install void-repo-nonfree
 ```sh
 sudo xbps-install -S firefox fastfetch yazi ghostty curl neovim swayfx seatd dbus elogind mesa-dri
 ```
+For Intel
+```sh
+sudo xbps-install -S mesa-vulkan-intel
+```
+For Radeon
+```sh
+sudo xbps-install -S mesa-vulkan-radeon
+```
+For Nvidia
+```sh
+sudo xbps-install nvidia nvidia-libs-32bit
+```
 
 #SuperFile install
 ```sh

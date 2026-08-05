@@ -21,3 +21,7 @@ sudo ln -s /etc/sv/dbus /var/service/
 ```sh
 sudo ln -s /etc/sv/seatd /var/service/
 ```
+#Configuration
+```sh
+sudo uadd -G _seatd $(whoami)
+```

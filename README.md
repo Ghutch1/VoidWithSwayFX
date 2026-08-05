@@ -25,3 +25,4 @@ sudo ln -s /etc/sv/seatd /var/service/
 ```sh
 sudo usermod -aG _seatd $(whoami)
 ```
+Log out of current TTY session after the command above.

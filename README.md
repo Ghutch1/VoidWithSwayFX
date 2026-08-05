@@ -3,6 +3,8 @@
 
 #XBPS packages install
 ```sh
+sudo xbps-install void-repo-nonfree
+
 sudo xbps-install -S firefox fastfetch yazi ghostty curl neovim
 ```
 

@@ -6,10 +6,16 @@
 sudo xbps-install void-repo-nonfree
 ```
 ```sh
-sudo xbps-install -S firefox fastfetch yazi ghostty curl neovim
+sudo xbps-install -S firefox fastfetch yazi ghostty curl neovim swayfx seatd dbus
 ```
 
 #SuperFile install
 ```sh
 sudo bash -c "$(curl -sLo- https://superfile.dev/install.sh)"
+```
+
+#Services
+```sh
+sudo ln -s /etc/sv/dbus /var/service/
+sudo ln -s /etc/sv/seatd /var/service/
 ```

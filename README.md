@@ -18,9 +18,12 @@ sudo xbps-install -S mesa-vulkan-radeon
 ```
 For Nvidia
 ```sh
-sudo xbps-install nvidia nvidia-libs-32bit
+sudo xbps-install -S nvidia nvidia-libs-32bit
 ```
-
+For VMware
+```sh
+sudo xbps-install -S xf86-video-vmware
+```
 #SuperFile install
 ```sh
 sudo bash -c "$(curl -sLo- https://superfile.dev/install.sh)"

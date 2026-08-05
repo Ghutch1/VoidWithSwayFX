@@ -1,5 +1,5 @@
 ## Void with... SwayFX
 
 ```sh
-sudo xbps-install -S firefox fastfetch yazi
+sudo xbps-install -S firefox fastfetch yazi ghostty
 ```

@@ -17,5 +17,7 @@ sudo bash -c "$(curl -sLo- https://superfile.dev/install.sh)"
 #Services
 ```sh
 sudo ln -s /etc/sv/dbus /var/service/
+```
+```sh
 sudo ln -s /etc/sv/seatd /var/service/
 ```

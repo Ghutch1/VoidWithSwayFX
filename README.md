@@ -6,7 +6,7 @@
 sudo xbps-install void-repo-nonfree
 ```
 ```sh
-sudo xbps-install -S firefox fastfetch yazi ghostty curl neovim swayfx seatd dbus elogind
+sudo xbps-install -S firefox fastfetch yazi ghostty curl neovim swayfx seatd dbus elogind mesa-dri
 ```
 
 #SuperFile install

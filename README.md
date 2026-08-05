@@ -1,5 +1,5 @@
 ## Void with... SwayFX
 
 ```sh
-dwada
+sudo xbps-install -S firefox fastfetch
 ```

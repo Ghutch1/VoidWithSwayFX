@@ -22,7 +22,7 @@ sudo xbps-install -S nvidia nvidia-libs-32bit
 ```
 For VMware
 ```sh
-sudo xbps-install -S xf86-video-vmware
+sudo xbps-install -S virtualbox-ose-guest-dkms virtualbox-ose-guest-utils
 ```
 #SuperFile install
 ```sh

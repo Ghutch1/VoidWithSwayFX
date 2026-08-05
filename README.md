@@ -6,7 +6,7 @@
 sudo xbps-install void-repo-nonfree
 ```
 ```sh
-sudo xbps-install -S firefox fastfetch yazi ghostty curl neovim swayfx seatd dbus
+sudo xbps-install -S firefox fastfetch yazi ghostty curl neovim swayfx seatd dbus elogind
 ```
 
 #SuperFile install
@@ -20,6 +20,9 @@ sudo ln -s /etc/sv/dbus /var/service/
 ```
 ```sh
 sudo ln -s /etc/sv/seatd /var/service/
+```
+```sh
+sudo ln -s /etc/sv/elogind /var/service/
 ```
 #Configuration
 ```sh

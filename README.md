@@ -1,3 +1,2 @@
-# VoidWithSwayFX
 ## Void with... SwayFX
 

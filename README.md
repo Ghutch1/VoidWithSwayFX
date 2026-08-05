@@ -23,5 +23,5 @@ sudo ln -s /etc/sv/seatd /var/service/
 ```
 #Configuration
 ```sh
-sudo uadd -G _seatd $(whoami)
+sudo usermod -aG _seatd $(whoami)
 ```

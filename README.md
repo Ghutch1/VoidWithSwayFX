@@ -3,7 +3,7 @@
 
 #XBPS packages install
 ```sh
-sudo xbps-install -S firefox fastfetch yazi ghostty curl
+sudo xbps-install -S firefox fastfetch yazi ghostty curl neovim
 ```
 
 #SuperFile install

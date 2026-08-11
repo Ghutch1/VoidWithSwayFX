@@ -6,7 +6,7 @@
 sudo xbps-install void-repo-nonfree
 ```
 ```sh
-sudo xbps-install -S firefox fastfetch yazi ghostty curl neovim wofi Waybar swayfx seatd dbus elogind mesa-dri
+sudo xbps-install -S firefox NetworkManager fastfetch yazi ghostty curl neovim wofi Waybar swayfx seatd dbus elogind mesa-dri
 ```
 For Intel
 ```sh
@@ -30,6 +30,9 @@ sudo ln -s /etc/sv/seatd /var/service/
 ```
 ```sh
 sudo ln -s /etc/sv/elogind /var/service/
+```
+```sh
+sudo ln -s /etc/sv/NetworkManager /var/service/
 ```
 #Configuration
 ```sh

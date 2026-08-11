@@ -6,7 +6,7 @@
 sudo xbps-install void-repo-nonfree
 ```
 ```sh
-sudo xbps-install -S firefox NetworkManager fastfetch yazi ghostty curl neovim wofi Waybar swayfx seatd dbus elogind mesa-dri
+sudo xbps-install -S firefox NetworkManager fastfetch yazi ghostty curl neovim wofi Waybar swayfx seatd dbus pipewire wireplumber elogind mesa-dri
 ```
 For Intel
 ```sh

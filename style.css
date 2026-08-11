@@ -1,0 +1,101 @@
+* {
+    font-family: "Hack Nerd Font", "FiraCode Nerd Font", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Tokyo Night Base Background with SwayFX Transparency */
+window#waybar {
+    background: rgba(26, 27, 38, 0.75); 
+    border-radius: 12px;
+    color: #c0caf5;
+}
+
+/* Base module styling for the pill look */
+#workspaces,
+#window,
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#tray {
+    padding: 0 14px;
+    margin: 4px 6px;
+    border-radius: 10px;
+    background-color: rgba(36, 40, 59, 0.8);
+    color: #c0caf5;
+}
+
+/* Workspace Button Styling */
+#workspaces button {
+    padding: 0 8px;
+    color: #565f89;
+    background: transparent;
+    border-radius: 8px;
+}
+
+#workspaces button:hover {
+    background: rgba(65, 72, 104, 0.8);
+    text-shadow: none;
+    box-shadow: none;
+}
+
+/* Focused Workspace - Tokyo Night Blue Accent */
+#workspaces button.focused {
+    color: #7aa2f7;
+    background: rgba(65, 72, 104, 0.8);
+}
+
+/* Urgent Workspace - Tokyo Night Red Accent */
+#workspaces button.urgent {
+    color: #f7768e;
+}
+
+/* Specific Module Colors */
+#clock {
+    color: #bb9af7; /* Purple */
+}
+
+#pulseaudio {
+    color: #7dcfff; /* Cyan */
+}
+
+#pulseaudio.muted {
+    color: #f7768e; /* Red */
+    background-color: rgba(247, 118, 142, 0.15);
+}
+
+#network {
+    color: #e0af68; /* Yellow/Orange */
+}
+
+#network.disconnected {
+    color: #f7768e;
+}
+
+#battery {
+    color: #9ece6a; /* Green */
+}
+
+#battery.warning {
+    color: #e0af68; /* Yellow/Orange */
+    background-color: rgba(224, 175, 104, 0.15);
+}
+
+#battery.critical {
+    color: #f7768e; /* Red */
+    background-color: rgba(247, 118, 142, 0.15);
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Battery Blink Animation for Critical State */
+@keyframes blink {
+    to {
+        background-color: rgba(247, 118, 142, 0.4);
+        color: #ffffff;
+    }
+}

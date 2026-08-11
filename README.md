@@ -20,10 +20,6 @@ For Nvidia
 ```sh
 sudo xbps-install -S nvidia nvidia-libs-32bit
 ```
-#SuperFile install
-```sh
-sudo bash -c "$(curl -sLo- https://superfile.dev/install.sh)"
-```
 
 #Services
 ```sh

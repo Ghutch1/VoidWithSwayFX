@@ -5,9 +5,19 @@
     "height": 30,
     "spacing": 4,
 
-    "modules-left": ["cpu", "custom/gpu", "memory", "temperature"],
+    "modules-left": ["sway/workspaces", "cpu", "custom/gpu", "memory", "temperature"],
     "modules-center": ["clock"],
     "modules-right": ["mpris", "pulseaudio", "custom/power"],
+
+    "sway/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{name}",
+        "format-icons": {
+            "focused": "",
+            "default": ""
+        }
+    },
 
     "cpu": {
         "format": " {usage}%",

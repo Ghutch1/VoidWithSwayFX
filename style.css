@@ -10,7 +10,7 @@ window#waybar {
     color: #ffffff;
 }
 
-/* LEFT - Added padding to prevent clipping on the left edge */
+/* LEFT */
 .modules-left {
     background-color: rgba(20, 20, 20, 0.2);
     border-radius: 10px;
@@ -36,6 +36,26 @@ window#waybar {
     padding-right: 6px;
 }
 
+/* Workspaces (Visual Panel Selector) */
+#workspaces button {
+    padding: 0 6px;
+    color: #888888;
+    background: transparent;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.focused {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.25);
+    font-weight: bold;
+}
+
+#workspaces button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
 /* Module spacing & sizing */
 #cpu,
 #memory,
@@ -45,8 +65,6 @@ window#waybar {
 #mpris,
 #custom-power,
 #temperature,
-#workspaces,
-#window,
 #network {
     padding: 0 6px;
     margin: 0 2px;
@@ -87,7 +105,7 @@ tooltip label {
     font-size: 12px;
 }
 
-/* Smooth hover effect without breaking layout sizing */
+/* Smooth hover effect */
 #cpu,
 #memory,
 #custom-gpu,

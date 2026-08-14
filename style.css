@@ -10,11 +10,13 @@ window#waybar {
     color: #ffffff;
 }
 
-/* LEFT */
+/* LEFT - Added padding to prevent clipping on the left edge */
 .modules-left {
     background-color: rgba(20, 20, 20, 0.2);
     border-radius: 10px;
     margin: 3px 0 3px 6px;
+    padding-left: 6px;
+    padding-right: 4px;
 }
 
 /* CENTER */
@@ -22,6 +24,7 @@ window#waybar {
     background-color: rgba(20, 20, 20, 0.2);
     border-radius: 10px;
     margin: 3px 0;
+    padding: 0 6px;
 }
 
 /* RIGHT */
@@ -29,6 +32,8 @@ window#waybar {
     background-color: rgba(20, 20, 20, 0.2);
     border-radius: 10px;
     margin: 3px 6px 3px 0;
+    padding-left: 4px;
+    padding-right: 6px;
 }
 
 /* Module spacing & sizing */
@@ -41,8 +46,9 @@ window#waybar {
 #custom-power,
 #temperature,
 #workspaces,
-#window {
-    padding: 0 8px;
+#window,
+#network {
+    padding: 0 6px;
     margin: 0 2px;
 }
 
@@ -50,7 +56,7 @@ window#waybar {
 #custom-power {
     color: #ffffff;
     font-size: 13px;
-    margin-right: 6px;
+    margin-right: 4px;
 }
 
 /* MPRIS */
@@ -89,7 +95,8 @@ tooltip label {
 #clock,
 #pulseaudio,
 #mpris,
-#custom-power {
+#custom-power,
+#network {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -100,7 +107,8 @@ tooltip label {
 #clock:hover,
 #pulseaudio:hover,
 #mpris:hover,
-#custom-power:hover {
+#custom-power:hover,
+#network:hover {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 6px;
 }

@@ -1,14 +1,14 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 35,
-    "spacing": 4,
-    "margin-top": 6,
+    "height": 30,
+    "margin-top": 5,
     "margin-left": 10,
     "margin-right": 10,
 
     "modules-left": [
         "sway/workspaces",
+        "custom/separator",
         "sway/window"
     ],
     "modules-center": [
@@ -26,11 +26,11 @@
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
+            "1": "I",
+            "2": "II",
+            "3": "III",
+            "4": "IV",
+            "5": "V",
             "urgent": "",
             "focused": "",
             "default": ""
@@ -38,26 +38,23 @@
     },
 
     "sway/window": {
-        "max-length": 40,
-        "format": "{}",
-        "separate-outputs": true
+        "format": "{}"
     },
 
     "clock": {
-        "format": "{:%d %b  %H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        "format": "{:%H:%M}",
+        "format-alt": "{:%Y-%m-%d}"
     },
 
     "network": {
-        "format-wifi": "  {signalStrength}%",
-        "format-ethernet": "  Connected",
-        "format-disconnected": "⚠ Disconnected",
-        "tooltip-format": "{essid}"
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-disconnected": "⚠"
     },
 
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-muted": " Muted",
+        "format": "{icon}",
+        "format-muted": "",
         "format-icons": {
             "headphone": "",
             "default": ["", "", ""]
@@ -66,18 +63,12 @@
     },
 
     "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}  {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
+        "format": "{icon}",
         "format-icons": ["", "", "", "", ""]
     },
 
     "tray": {
-        "icon-size": 16,
-        "spacing": 8
+        "icon-size": 14,
+        "spacing": 5
     }
 }

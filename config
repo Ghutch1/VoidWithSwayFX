@@ -1,22 +1,25 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 30,
-    "margin-top": 5,
+    "height": 36,
+    "margin-top": 6,
     "margin-left": 10,
     "margin-right": 10,
+    "spacing": 4,
 
     "modules-left": [
         "sway/workspaces",
-        "custom/separator",
         "sway/window"
     ],
     "modules-center": [
         "clock"
     ],
     "modules-right": [
+        "idle_inhibitor",
         "pulseaudio",
         "network",
+        "cpu",
+        "memory",
         "battery",
         "tray"
     ],
@@ -26,11 +29,11 @@
         "all-outputs": true,
         "format": "{icon}",
         "format-icons": {
-            "1": "I",
-            "2": "II",
-            "3": "III",
-            "4": "IV",
-            "5": "V",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
             "urgent": "",
             "focused": "",
             "default": ""
@@ -38,37 +41,70 @@
     },
 
     "sway/window": {
-        "format": "{}"
+        "format": "{}",
+        "max-length": 35,
+        "separate-outputs": true
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
     },
 
     "clock": {
-        "format": "{:%H:%M}",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%H:%M}  ",
+        "format-alt": "{:%Y-%m-%d  }",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "{}% "
     },
 
     "network": {
-        "format-wifi": "",
-        "format-ethernet": "",
-        "format-disconnected": "⚠"
+        "format-wifi": "{essid} ",
+        "format-ethernet": "Connected ",
+        "format-disconnected": "Disconnected ⚠",
+        "tooltip-format": "{ifname} via {gwaddr}"
     },
 
     "pulseaudio": {
-        "format": "{icon}",
-        "format-muted": "",
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "Muted ",
         "format-icons": {
             "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
 
     "battery": {
-        "format": "{icon}",
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
         "format-icons": ["", "", "", "", ""]
     },
 
     "tray": {
-        "icon-size": 14,
-        "spacing": 5
+        "icon-size": 16,
+        "spacing": 8
     }
 }

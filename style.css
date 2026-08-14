@@ -1,101 +1,80 @@
 * {
-    font-family: "Hack Nerd Font", "FiraCode Nerd Font", sans-serif;
-    font-size: 14px;
+    font-family: "Hack Nerd Font", sans-serif;
+    font-size: 13px;
     font-weight: bold;
+    min-height: 0;
 }
 
-/* Tokyo Night Base Background with SwayFX Transparency */
 window#waybar {
-    background: rgba(26, 27, 38, 0.75); 
-    border-radius: 12px;
-    color: #c0caf5;
+    background: rgba(22, 22, 30, 0.7);
+    border-radius: 10px;
+    color: #cdd6f4;
 }
 
-/* Base module styling for the pill look */
+/* Individual Module Containers */
 #workspaces,
 #window,
 #clock,
-#battery,
-#network,
 #pulseaudio,
+#network,
+#battery,
 #tray {
-    padding: 0 14px;
-    margin: 4px 6px;
-    border-radius: 10px;
-    background-color: rgba(36, 40, 59, 0.8);
-    color: #c0caf5;
+    background: rgba(30, 30, 46, 0.75);
+    padding: 2px 12px;
+    margin: 4px 4px;
+    border-radius: 8px;
+    color: #cdd6f4;
 }
 
-/* Workspace Button Styling */
+/* Workspaces Styling */
 #workspaces button {
-    padding: 0 8px;
-    color: #565f89;
+    padding: 0 5px;
+    color: #6c7086;
     background: transparent;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 #workspaces button:hover {
-    background: rgba(65, 72, 104, 0.8);
-    text-shadow: none;
-    box-shadow: none;
+    background: rgba(69, 71, 90, 0.6);
+    color: #cdd6f4;
 }
 
-/* Focused Workspace - Tokyo Night Blue Accent */
 #workspaces button.focused {
-    color: #7aa2f7;
-    background: rgba(65, 72, 104, 0.8);
+    color: #89b4fa;
+    background: rgba(69, 71, 90, 0.8);
 }
 
-/* Urgent Workspace - Tokyo Night Red Accent */
 #workspaces button.urgent {
-    color: #f7768e;
+    color: #f38ba8;
 }
 
-/* Specific Module Colors */
+/* Active Window Styling */
+#window {
+    color: #a6adc8;
+    font-weight: normal;
+}
+
+/* Module Specific Colors */
 #clock {
-    color: #bb9af7; /* Purple */
+    color: #fab387;
 }
 
 #pulseaudio {
-    color: #7dcfff; /* Cyan */
-}
-
-#pulseaudio.muted {
-    color: #f7768e; /* Red */
-    background-color: rgba(247, 118, 142, 0.15);
+    color: #89b4fa;
 }
 
 #network {
-    color: #e0af68; /* Yellow/Orange */
-}
-
-#network.disconnected {
-    color: #f7768e;
+    color: #a6e3a1;
 }
 
 #battery {
-    color: #9ece6a; /* Green */
+    color: #f9e2af;
 }
 
 #battery.warning {
-    color: #e0af68; /* Yellow/Orange */
-    background-color: rgba(224, 175, 104, 0.15);
+    color: #fab387;
 }
 
 #battery.critical {
-    color: #f7768e; /* Red */
-    background-color: rgba(247, 118, 142, 0.15);
-    animation-name: blink;
-    animation-duration: 1s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-/* Battery Blink Animation for Critical State */
-@keyframes blink {
-    to {
-        background-color: rgba(247, 118, 142, 0.4);
-        color: #ffffff;
-    }
+    color: #f38ba8;
 }

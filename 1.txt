@@ -1,0 +1,31 @@
+[core]
+plugins = alpha animate autostart command cube fast-start grid idle move oswitch place resize vswitch window-rules wm-actions zoom wexit
+
+# Set a continuous 3x3 pan-and-scan spatial canvas (adjust dimensions to preference)
+vwidth = 3
+vheight = 3
+
+[autostart]
+# Launch Noctalia Shell on startup
+noctalia = noctalia-shell
+
+[vswitch]
+# Smooth canvas panning hotkeys (Super + Arrow Keys to glide across the continuous canvas)
+binding_left = <super> KEY_LEFT
+binding_right = <super> KEY_RIGHT
+binding_up = <super> KEY_UP
+binding_down = <super> KEY_DOWN
+
+# Drag windows across canvas viewports (Super + Shift + Arrow Keys)
+with_win_left = <super> <shift> KEY_LEFT
+with_win_right = <super> <shift> KEY_RIGHT
+with_win_up = <super> <shift> KEY_UP
+with_win_down = <super> <shift> KEY_DOWN
+
+[cube]
+# Optional: Pull back to view all viewports simultaneously on an expanded 3D canvas
+activate = <super> KEY_TAB
+
+[wm-actions]
+# Toggle window floating state on the infinite plane
+toggle_float = <super> KEY_F

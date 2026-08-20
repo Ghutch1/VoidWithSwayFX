@@ -1,31 +1,41 @@
 [core]
-plugins = alpha animate autostart command cube fast-start grid idle move oswitch place resize vswitch window-rules wm-actions zoom wexit
-
-# Set a continuous 3x3 pan-and-scan spatial canvas (adjust dimensions to preference)
-vwidth = 3
-vheight = 3
+# Essential plugins for a standard Wayfire experience (including workspaces and window rules)
+plugins = alpha autostart command fast-switcher grid move place resize switcher window-rules wm-actions vswitch expo
+close_top_view = <super> <shift> KEY_Q
 
 [autostart]
-# Launch Noctalia Shell on startup
-noctalia = noctalia-shell
+# Automatically start your panel and background on boot
+panel = wf-panel
+noctalia_bg = noctalia
+
+[panel]
+# Forces the default Wayfire panel to the bottom of the screen
+position = bottom
+
+[command]
+# Keyboard shortcuts for opening apps
+binding_terminal = <super> KEY_ENTER
+command_terminal = kitty 
+binding_launcher = <super> KEY_D
+command_launcher = wofi --show drun
+
+[input]
+# Standard input settings
+xkb_layout = us
+click_method = default
+
+[wm-actions]
+# Window management shortcuts
+toggle_fullscreen = <super> KEY_F
+toggle_always_on_top = <super> <shift> KEY_T
+
+[window-rules]
+# Forces Noctalia to act as a background and prevents it from covering your apps
+rule_1 = on created if app_id is "noctalia" then lower
 
 [vswitch]
-# Smooth canvas panning hotkeys (Super + Arrow Keys to glide across the continuous canvas)
+# Controls for switching between your "Infinite Desktop" workspaces
 binding_left = <super> KEY_LEFT
 binding_right = <super> KEY_RIGHT
 binding_up = <super> KEY_UP
 binding_down = <super> KEY_DOWN
-
-# Drag windows across canvas viewports (Super + Shift + Arrow Keys)
-with_win_left = <super> <shift> KEY_LEFT
-with_win_right = <super> <shift> KEY_RIGHT
-with_win_up = <super> <shift> KEY_UP
-with_win_down = <super> <shift> KEY_DOWN
-
-[cube]
-# Optional: Pull back to view all viewports simultaneously on an expanded 3D canvas
-activate = <super> KEY_TAB
-
-[wm-actions]
-# Toggle window floating state on the infinite plane
-toggle_float = <super> KEY_F

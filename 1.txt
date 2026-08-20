@@ -1,40 +1,34 @@
 [core]
-# Essential plugins for a standard Wayfire experience (including workspaces and window rules)
 plugins = alpha autostart command fast-switcher grid move place resize switcher window-rules wm-actions vswitch expo
 close_top_view = <super> <shift> KEY_Q
 
 [autostart]
-# Automatically start your panel and background on boot
-panel = wf-panel
-noctalia_bg = noctalia
-
-[panel]
-# Forces the default Wayfire panel to the bottom of the screen
-position = bottom
+# Noctalia is a full shell, so it replaces wf-panel completely
+shell = noctalia
+# Loads the system tray icon for NetworkManager
+network = nm-applet
 
 [command]
-# Keyboard shortcuts for opening apps
 binding_terminal = <super> KEY_ENTER
-command_terminal = kitty 
+command_terminal = ghostty 
+
 binding_launcher = <super> KEY_D
 command_launcher = wofi --show drun
 
+# Opens Yazi inside a new Ghostty window
+binding_filemanager = <super> KEY_E
+command_filemanager = ghostty -e yazi
+
 [input]
-# Standard input settings
 xkb_layout = us
 click_method = default
 
 [wm-actions]
-# Window management shortcuts
 toggle_fullscreen = <super> KEY_F
 toggle_always_on_top = <super> <shift> KEY_T
 
-[window-rules]
-# Forces Noctalia to act as a background and prevents it from covering your apps
-rule_1 = on created if app_id is "noctalia" then lower
-
 [vswitch]
-# Controls for switching between your "Infinite Desktop" workspaces
+# Infinite Desktop navigation keys
 binding_left = <super> KEY_LEFT
 binding_right = <super> KEY_RIGHT
 binding_up = <super> KEY_UP

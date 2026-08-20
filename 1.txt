@@ -1,54 +1,73 @@
 [core]
-# Essential plugins plus the navigation plugins (vswitch, expo, zoom)
-plugins = alpha autostart command fast-switcher grid move place resize switcher window-rules wm-actions vswitch expo zoom
+# Essential plugins, navigation plugins, and gaming constraints
+plugins = alpha autostart command fast-switcher grid move place resize switcher window-rules wm-actions vswitch expo zoom pointer-constraints idle
 
-# Creates a 3x3 infinite canvas grid
+# 3x3 Infinite Canvas
 vwidth = 3
 vheight = 3
+
+# Explicitly enable XWayland so Steam and standard Linux games can run
+xwayland = true
 
 # Shortcut to close the active window
 close_top_view = <super> <shift> KEY_Q
 
 [autostart]
-# Noctalia handles the desktop. 
-# Because "panel = wf-panel" is missing, the white top bar will no longer load.
+# Blocks the default white bar
+panel = none
+
+# Shell and Network
 shell = noctalia
 network = nm-applet
 
+# Polkit Authentication Agent
+polkit = /usr/bin/lxqt-policykit-agent
+
+# --- VOID LINUX AUDIO ---
+# Starts PipeWire and waits a second for it to initialize before launching WirePlumber
+audio = pipewire & pipewire-pulse & sleep 1 && wireplumber
+
+# --- PORTABILITY & GAMING ---
+# Exports Wayland environment variables (critical for screen sharing and flatpaks)
+dbus_env = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=Wayfire
+
 [command]
-# App shortcuts
+# Core Apps
 binding_terminal = <super> KEY_ENTER
-command_terminal = ghostty 
+command_terminal = alacritty
 
 binding_launcher = <super> KEY_D
 command_launcher = wofi --show drun
 
-# Opens Yazi inside a new Ghostty window
+# Terminal Apps
 binding_filemanager = <super> KEY_E
-command_filemanager = ghostty -e yazi
+command_filemanager = alacritty -e yazi
+
+binding_editor = <super> KEY_C
+command_editor = alacritty -e nvim
 
 [input]
 xkb_layout = us
 click_method = default
+
+# Disables mouse acceleration for raw input (highly recommended for FPS gaming)
+mouse_accel_profile = flat
 
 [wm-actions]
 toggle_fullscreen = <super> KEY_F
 toggle_always_on_top = <super> <shift> KEY_T
 
 [vswitch]
-# Infinite Desktop navigation keys (pan around the 3x3 grid)
+# Infinite Desktop navigation keys
 binding_left = <super> KEY_LEFT
 binding_right = <super> KEY_RIGHT
 binding_up = <super> KEY_UP
 binding_down = <super> KEY_DOWN
-# Allows the camera to loop back to the other side when you hit the edge
 wraparound = true
 
 [zoom]
-# Hold Super and scroll your mouse wheel to zoom in and out of the canvas
 modifier = <super>
 
 [expo]
-# Press Super + Tab to zoom out and see all windows on your 3x3 grid at once
 toggle = <super> KEY_TAB
 distance = 300

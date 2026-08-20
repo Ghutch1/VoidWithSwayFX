@@ -1,14 +1,22 @@
 [core]
-plugins = alpha autostart command fast-switcher grid move place resize switcher window-rules wm-actions vswitch expo
+# Essential plugins plus the navigation plugins (vswitch, expo, zoom)
+plugins = alpha autostart command fast-switcher grid move place resize switcher window-rules wm-actions vswitch expo zoom
+
+# Creates a 3x3 infinite canvas grid
+vwidth = 3
+vheight = 3
+
+# Shortcut to close the active window
 close_top_view = <super> <shift> KEY_Q
 
 [autostart]
-# Noctalia is a full shell, so it replaces wf-panel completely
+# Noctalia handles the desktop. 
+# Because "panel = wf-panel" is missing, the white top bar will no longer load.
 shell = noctalia
-# Loads the system tray icon for NetworkManager
 network = nm-applet
 
 [command]
+# App shortcuts
 binding_terminal = <super> KEY_ENTER
 command_terminal = ghostty 
 
@@ -28,8 +36,19 @@ toggle_fullscreen = <super> KEY_F
 toggle_always_on_top = <super> <shift> KEY_T
 
 [vswitch]
-# Infinite Desktop navigation keys
+# Infinite Desktop navigation keys (pan around the 3x3 grid)
 binding_left = <super> KEY_LEFT
 binding_right = <super> KEY_RIGHT
 binding_up = <super> KEY_UP
 binding_down = <super> KEY_DOWN
+# Allows the camera to loop back to the other side when you hit the edge
+wraparound = true
+
+[zoom]
+# Hold Super and scroll your mouse wheel to zoom in and out of the canvas
+modifier = <super>
+
+[expo]
+# Press Super + Tab to zoom out and see all windows on your 3x3 grid at once
+toggle = <super> KEY_TAB
+distance = 300

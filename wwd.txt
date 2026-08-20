@@ -1,1 +1,6 @@
 echo "repository=https://repo.voiders.dev" | sudo tee /etc/xbps.d/10-voiders-community.conf
+
+
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+export QT_QPA_PLATFORM=wayland
+export GDK_BACKEND=wayland,x11
